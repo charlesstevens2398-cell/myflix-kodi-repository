@@ -215,7 +215,20 @@
       <license>GPL-2.0-or-later</license>
     </extension>
   </addon>
-  <addon id="plugin.video.myflix" name="MyFlix Profiles" version="0.5.16" provider-name="Charles Stevens / MyFlix">
+  <addon provider-name="MyFlix" id="script.module.myflix.installset.audio" name="MyFlix Skin and Companion" version="1.0.0">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="plugin.video.myflix" version="0.5.16" />
+      <import addon="skin.myflix" version="0.5.9" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Installs or updates the MyFlix skin and companion.</summary>
+      <platform>all</platform>
+      <license>GPL-2.0-or-later</license>
+    </extension>
+  </addon>
+  <addon id="plugin.video.myflix" name="MyFlix Profiles" version="0.5.17" provider-name="Charles Stevens / MyFlix">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="plugin.video.umbrella" optional="true" />
@@ -234,10 +247,10 @@
       <license>GPL-2.0-or-later</license>
     </extension>
   </addon>
-  <addon provider-name="MyFlix" id="script.module.myflix.installset.audio" name="MyFlix Skin and Companion" version="1.0.0">
+  <addon provider-name="MyFlix" id="script.module.myflix.installset.progress" name="MyFlix Skin and Companion" version="1.0.0">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
-      <import addon="plugin.video.myflix" version="0.5.16" />
+      <import addon="plugin.video.myflix" version="0.5.17" />
       <import addon="skin.myflix" version="0.5.9" />
     </requires>
     <extension point="xbmc.python.module" library="lib" />
@@ -247,7 +260,7 @@
       <license>GPL-2.0-or-later</license>
     </extension>
   </addon>
-  <addon id="script.myflix.installer" name="MyFlix Installer" version="0.3.24" provider-name="MyFlix">
+  <addon id="script.myflix.installer" name="MyFlix Installer" version="0.3.25" provider-name="MyFlix">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
