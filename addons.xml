@@ -199,11 +199,55 @@
       <license>GPL-2.0-or-later</license>
     </extension>
   </addon>
-  <addon id="skin.myflix" version="0.5.12" name="MyFlix" provider-name="Charles Stevens / Estuary contributors">
+  <addon provider-name="MyFlix" id="script.module.myflix.installset.rollback" name="MyFlix Skin and Companion" version="1.0.0">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="plugin.video.myflix" version="0.5.20" />
+      <import addon="skin.myflix" version="0.5.12" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Installs or updates the MyFlix skin and companion.</summary>
+      <platform>all</platform>
+      <license>GPL-2.0-or-later</license>
+    </extension>
+  </addon>
+  <addon provider-name="MyFlix" id="script.module.myflix.installset.providers" name="MyFlix Skin and Companion" version="1.0.0">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="plugin.video.myflix" version="0.5.21" />
+      <import addon="skin.myflix" version="0.5.12" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Installs or updates the MyFlix skin and companion.</summary>
+      <platform>all</platform>
+      <license>GPL-2.0-or-later</license>
+    </extension>
+  </addon>
+  <addon id="plugin.video.myflix" name="MyFlix Profiles" version="0.5.22" provider-name="Charles Stevens / MyFlix">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="plugin.video.umbrella" optional="true" />
+      <import addon="plugin.video.pov" optional="true" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="login" />
+    <extension point="xbmc.addon.metadata">
+      <reuselanguageinvoker>false</reuselanguageinvoker>
+      <summary lang="en_GB">Profile-local favorites, playback history and MyFlix browsing.</summary>
+      <description lang="en_GB">Companion for MyFlix. Stores personal data under the active Kodi profile. TMDb Helper and your configured player provide metadata and playback.</description>
+      <platform>all</platform>
+      <license>GPL-2.0-or-later</license>
+    </extension>
+  </addon>
+  <addon id="skin.myflix" version="0.5.13" name="MyFlix" provider-name="Charles Stevens / Estuary contributors">
     <requires>
       <import addon="xbmc.gui" version="5.17.0" />
       <import addon="plugin.video.themoviedb.helper" version="0.0.0" optional="true" />
-      <import addon="plugin.video.myflix" version="0.5.20" />
+      <import addon="plugin.video.myflix" version="0.5.22" />
     </requires>
     <extension point="xbmc.gui.skin" debugging="false">
       <res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
@@ -226,11 +270,11 @@
       <description lang="en_GB">MyFlix prototype for Kodi 21, based on Estuary. TMDb Helper supplies lists and launches your configured player. Account authorization stays in your add-ons. Xbox runtime validation pending.</description>
     </extension>
   </addon>
-  <addon provider-name="MyFlix" id="script.module.myflix.installset.rollback" name="MyFlix Skin and Companion" version="1.0.0">
+  <addon provider-name="MyFlix" id="script.module.myflix.installset.localmovie" name="MyFlix Skin and Companion" version="1.0.0">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
-      <import addon="plugin.video.myflix" version="0.5.20" />
-      <import addon="skin.myflix" version="0.5.12" />
+      <import addon="plugin.video.myflix" version="0.5.22" />
+      <import addon="skin.myflix" version="0.5.13" />
     </requires>
     <extension point="xbmc.python.module" library="lib" />
     <extension point="xbmc.addon.metadata">
@@ -239,38 +283,7 @@
       <license>GPL-2.0-or-later</license>
     </extension>
   </addon>
-  <addon id="plugin.video.myflix" name="MyFlix Profiles" version="0.5.21" provider-name="Charles Stevens / MyFlix">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0" />
-      <import addon="plugin.video.umbrella" optional="true" />
-      <import addon="plugin.video.pov" optional="true" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py" start="login" />
-    <extension point="xbmc.addon.metadata">
-      <reuselanguageinvoker>false</reuselanguageinvoker>
-      <summary lang="en_GB">Profile-local favorites, playback history and MyFlix browsing.</summary>
-      <description lang="en_GB">Companion for MyFlix. Stores personal data under the active Kodi profile. TMDb Helper and your configured player provide metadata and playback.</description>
-      <platform>all</platform>
-      <license>GPL-2.0-or-later</license>
-    </extension>
-  </addon>
-  <addon provider-name="MyFlix" id="script.module.myflix.installset.providers" name="MyFlix Skin and Companion" version="1.0.0">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0" />
-      <import addon="plugin.video.myflix" version="0.5.21" />
-      <import addon="skin.myflix" version="0.5.12" />
-    </requires>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en_GB">Installs or updates the MyFlix skin and companion.</summary>
-      <platform>all</platform>
-      <license>GPL-2.0-or-later</license>
-    </extension>
-  </addon>
-  <addon id="script.myflix.installer" name="MyFlix Installer" version="0.3.29" provider-name="MyFlix">
+  <addon id="script.myflix.installer" name="MyFlix Installer" version="0.3.30" provider-name="MyFlix">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
     </requires>
